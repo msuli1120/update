@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit</title>
+  </head>
+  <body>
+    <h3>Update {{ person.getName }}</h3>
+
+    <form action="/person/{{ person.getId }}" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <label for="name">Enter new name:</label>
+      <input type="text" name="name" id="name">
+      <label for="gender">Enter gender:</label>
+      <input id="gender" name="gender" type="text">
+      <button type="submit">Update</button>
+    </form>
+
+    <form action="/person/{{ person.getId }}" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Delete {{ person.getName }}</button>
+    </form>
+  </body>
+</html>
